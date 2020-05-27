@@ -16,5 +16,16 @@ module.exports = {
         ]
       }
     }
+  },
+  devServer: {
+    proxy: {
+      // 反向代理的规则  /api代表所有以/api开始的请求都要被反向代理
+      '/myapi': {
+        // 目标服务器   /aaa/users
+        // http://localhost:8888/api/private/v1/aaa/users
+        target: 'http://127.0.0.1:9090/api',
+        pathRewrite: { '^/myapi': '' }
+      }
+    }
   }
 }

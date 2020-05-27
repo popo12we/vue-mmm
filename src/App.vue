@@ -3,7 +3,14 @@
       11111
   </div>
 </template>
-
+<script>
+import axios from 'axios'
+export default {
+  mounted () {
+    axios.get('/myapi/getindexmenu')
+  }
+}
+</script>
 <style lang="less">
 *{
   margin: 0;
