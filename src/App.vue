@@ -1,13 +1,17 @@
 <template>
   <div id="app">
-      11111
+      <AppHeader></AppHeader>
+      <router-view></router-view>
   </div>
 </template>
 <script>
-import axios from 'axios'
+import AppHeader from './components/AppHeader.vue'
 export default {
+  components: {
+    AppHeader
+  },
   mounted () {
-    axios.get('/myapi/getindexmenu')
+    // axios.get('/myapi/getindexmenu')
   }
 }
 </script>
@@ -16,8 +20,8 @@ export default {
   margin: 0;
   padding: 0;
 }
-  #app{
-   height: 98px;
-   background-color: red;
-  }
+html,body,#app{
+  width: 100%;
+  height: 100%;
+}
 </style>

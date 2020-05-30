@@ -1,0 +1,259 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+input,
+select,
+form images,
+button {
+    vertical-align: middle;
+    -webkit-tap-highlight-color: transparent;
+    outline: 0;
+    border : 0;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+textarea {
+    width: 95%;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+em,
+i {
+    font-style: normal;
+}
+
+img {
+    border: none;
+}
+
+input,
+img {
+    vertical-align: middle;
+}
+html{
+    
+}
+body {
+    color: #000;
+    font-family: arial;
+    background: #f1f1f1;
+    overflow-x: hidden;
+    font-size: 0.6rem;
+}
+.fl(){
+    float: left;
+}
+.fr(){
+    float: right;
+}
+// 主页头部
+@bgc: #ff841d; 
+
+#header {
+    height: 2.45rem;
+    background-color: @bgc;
+    .logo {
+        height: 100%;
+        .fl();
+        img{
+            max-height: 1.25rem;
+            margin-top: 0.7rem;
+            margin-left: 1rem;
+        }
+    }
+    .appdown {
+        height: 100%;
+        .fr();
+        img{
+            max-height: 1.7rem;
+            margin-top: 0.3rem;
+            margin-right: 0.5rem;
+        }
+    }
+}
+#form-search {
+    height: 2.55rem;
+    margin-bottom: 0.4rem;
+    background-color: #fff;
+    
+    .search{ 
+        padding-top: 0.5rem;       
+       > input:nth-child(2){
+            background-color: @bgc;
+            height: 1.5rem;
+            line-height: 1.5rem;
+            width: 3.15rem;
+            font-size: 0.7rem;
+            color: #ffffff;
+            border-radius: 0.8rem;
+            .fr();
+            margin-right: 0.5rem;   
+            text-align: center;
+        } 
+        > input:nth-child(1){
+            background-color: #f1f1f1;
+            height: 1.5rem;
+            margin-left: 0.5rem;
+            border-radius: 0.8rem;
+            text-align: center;
+            .fl();
+            width: 70%;
+        }
+    
+    }
+}
+#menu {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background-color: #fff;
+    margin-bottom: 0.4rem;
+    >.row{
+        padding : 10px 0;
+        >.menu-item {
+            .fl();
+            width: 25%;
+            overflow: hidden;
+            text-align: center;
+            img {
+                width: 2.5rem;
+            }
+            p {
+                font-size: 0.6rem;
+                padding : 0.2rem 0;
+                margin-bottom: 0.5rem;
+            }
+        }
+    }
+}
+
+.list-title {
+    .list-title-content {
+        height: 1.8rem;
+        line-height: 1.8rem;
+        background: -webkit-gradient(linear,0 0,0 100%,from(#ffaf47),to(#ff9000)); 
+        color : #fff;
+        font-size: 0.7rem; 
+        span {
+            display: inline-block;
+            padding-left: 1rem;
+        }
+        img{
+            width:1rem;
+            .fr();
+            margin-top: 0.4rem;
+            margin-right: 0.5rem;
+            
+        }
+    }
+   
+}
+#recommen-product {
+    background-color: #fff;
+    > ul {
+        border: 1px solid #000;
+        > li {
+            
+            > a {
+                display: block;
+                .pic img{
+                    width: 0.5rem;
+                }
+            }
+        }
+    }
+    
+}
+#recommen-product li {
+    padding: 0.5rem 0.3rem; 
+    position: relative;
+    border-bottom: 1px solid #ddd;
+}
+#recommen-product .pic {
+    .fl();
+    width: 5rem;
+    margin: 0.5rem 0.2rem;
+
+}
+#recommen-product img {
+    width: 4.5rem;
+}
+#recommen-product .info {
+    .title{
+        height: 3rem;
+
+        span{
+            color:red;
+        }
+    }
+    .other {
+        color: #aaa;
+        font-size: 0.5rem;
+    }
+}
+#recommen-product .more-bar {
+
+    a {
+        display: block;
+        margin: 0.5rem;
+        height: 1.4rem;
+        line-height: 1.4rem;
+        border: 1px solid #ccc;
+        font-size: 0.5rem;        
+        text-align: center;
+        border-radius: 0.3rem;
+        background: -webkit-gradient(linear,0 0, 0 100%, from(#fff),to(#f1f1f1))
+    }
+}
