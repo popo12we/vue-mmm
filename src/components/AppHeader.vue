@@ -1,5 +1,5 @@
 <template>
-  <div class="AppHeader">
+  <div class="AppHeader clearfix">
     <div class="logoimg">
       <img src="../assets/images/header_logo.png" />
     </div>
@@ -17,7 +17,6 @@ export default {}
 .AppHeader {
   height: 98px;
   background-color: #ff841d;
-  overflow: hidden;
   .logoimg {
     margin-left: 32px;
     margin-top: 25px;
