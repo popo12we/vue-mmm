@@ -9,9 +9,6 @@ import AppHeader from './components/AppHeader.vue'
 export default {
   components: {
     AppHeader
-  },
-  mounted () {
-    // axios.get('/myapi/getindexmenu')
   }
 }
 </script>

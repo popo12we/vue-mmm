@@ -1,6 +1,9 @@
 const autoprefixer = require('autoprefixer')
 const pxtorem = require('postcss-pxtorem')
-
+const path = require('path')
+function resolve (dir) {
+  return path.join(__dirname, '..', dir)
+}
 module.exports = {
   outputDir: 'dist',
   publicPath: process.env.NODE_ENV === 'production' ? '/vant-demo/' : '/',
