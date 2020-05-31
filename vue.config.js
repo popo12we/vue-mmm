@@ -1,9 +1,6 @@
 const autoprefixer = require('autoprefixer')
 const pxtorem = require('postcss-pxtorem')
 const path = require('path')
-function resolve (dir) {
-  return path.join(__dirname, '..', dir)
-}
 module.exports = {
   outputDir: 'dist',
   publicPath: process.env.NODE_ENV === 'production' ? '/vant-demo/' : '/',
@@ -28,6 +25,13 @@ module.exports = {
         // http://localhost:8888/api/private/v1/aaa/users
         target: 'http://127.0.0.1:9090/api',
         pathRewrite: { '^/myapi': '' }
+      }
+    }
+  },
+  configureWebpack: {
+    resolve: {
+      alias: {
+        images: path.join(__dirname, 'src/assets/images')
       }
     }
   }
