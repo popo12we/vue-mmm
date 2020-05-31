@@ -3,15 +3,37 @@
     <SearchInput></SearchInput>
     <div class="menu">
       <ul class="clearfix">
-        <li v-for="(item,index) in menuList.slice(0,8)" @click="goToOther(linkList[index].url,item.name)" :key="item._id">
+        <li
+          v-for="(item,index) in menuList.slice(0,8)"
+          @click="goToOther(linkList[index].url,item.name)"
+          :key="item._id"
+        >
           <img :src="linkList[index].img" />
           <div>{{item.name}}</div>
         </li>
-        <li v-for="(item,index) in menuList.slice(8,12)" @click="goToOther(linkList[index].url,item.name)" :key="item._id" v-show="showMore">
+        <li
+          v-for="(item,index) in menuList.slice(8,12)"
+          @click="goToOther(linkList[index].url,item.name)"
+          :key="item._id"
+          v-show="showMore"
+        >
           <img :src="linkList[index].img" />
           <div>{{item.name}}</div>
-          </li>
+        </li>
       </ul>
+    </div>
+    <!-- 下方商品列表 -->
+    <div class="list">
+      <div class="item" v-for="item in list" :key="item._id">
+        <div class="img" v-html="item.productImg2"></div>
+        <div class="info">
+          <div class="title">移动端凑单品：海天 鲜味 生抽 1.28L</div>
+          <div class="price">10.9元</div>
+          <div class="other">
+            <span class="mall">京东商城 | 10-25 14:10</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -38,6 +60,7 @@ export default {
   data () {
     return {
       menuList: [],
+      list: [],
       showMore: false,
       linkList: [
         { url: '/category', img: img1 },
@@ -57,12 +80,20 @@ export default {
   },
   created () {
     this.getIndexMenu()
+    this.getMoneyCtrl()
   },
   methods: {
     async getIndexMenu () {
       const res = await axios.get('/myapi/getindexmenu')
       if (res.status === 200) {
         this.menuList = res.data.result
+      }
+    },
+
+    async getMoneyCtrl () {
+      const res = await axios.get('/myapi/getmoneyctrl')
+      if (res.status === 200) {
+        this.list = res.data.result
       }
     },
     goToOther (url, name) {
@@ -94,11 +125,45 @@ export default {
         display: block;
         width: 100px;
         height: 100px;
-        margin:0 auto;
+        margin: 0 auto;
       }
       div {
         padding-top: 10px;
         text-align: center;
+      }
+    }
+  }
+  .list {
+    margin-top: 20px;
+    .item {
+      border-bottom:1px solid #ccc;
+      margin: 15px 0;
+      .img {
+        width: 180px;
+        height: 180px;
+        float: left;
+       padding: 10px;
+        img {
+          width: 100%;
+          height: 100%;
+          display: block;
+        }
+      }
+      .info {
+        overflow: hidden;
+        position: relative;
+        font-size: 20px;
+        height: 180px;
+        padding: 10px;
+        .price {
+          color: red;
+        }
+        .other {
+          position: absolute;
+          bottom: 60px;
+          font-size: 18px;
+          color: #aaa;
+        }
       }
     }
   }
