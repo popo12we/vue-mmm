@@ -11,7 +11,13 @@
             :key="item._id"
           >
             <ul class="clearfix">
-              <li v-for="item1 in secondLevelData[item.titleId]" :key="item1._id">{{item1.category}}</li>
+              <router-link
+              :to='/productlist/+`categoryid=${item1.categoryId}`'
+              v-for="item1 in secondLevelData[item.titleId]"
+               :key="item1._id">
+                 <li >{{item1.category}}</li>
+               </router-link>
+
             </ul>
           </van-collapse-item>
       </van-collapse>
