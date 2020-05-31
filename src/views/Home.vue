@@ -24,16 +24,18 @@
     </div>
     <!-- 下方商品列表 -->
     <div class="list">
-      <div class="item" v-for="item in list" :key="item._id">
-        <div class="img" v-html="item.productImg2"></div>
-        <div class="info">
-          <div class="title">移动端凑单品：海天 鲜味 生抽 1.28L</div>
-          <div class="price">10.9元</div>
-          <div class="other">
-            <span class="mall">京东商城 | 10-25 14:10</span>
+      <router-link :to='/moneyproduct/+`${item.productId}`' v-for="item in list" :key="item._id">
+        <div class="item" >
+          <div class="img" v-html="item.productImg2"></div>
+          <div class="info">
+            <div class="title">移动端凑单品：海天 鲜味 生抽 1.28L</div>
+            <div class="price">10.9元</div>
+            <div class="other">
+              <span class="mall">京东商城 | 10-25 14:10</span>
+            </div>
           </div>
         </div>
-      </div>
+      </router-link>
     </div>
   </div>
 </template>
@@ -136,13 +138,13 @@ export default {
   .list {
     margin-top: 20px;
     .item {
-      border-bottom:1px solid #ccc;
+      border-bottom: 1px solid #ccc;
       margin: 15px 0;
       .img {
         width: 180px;
         height: 180px;
         float: left;
-       padding: 10px;
+        padding: 10px;
         img {
           width: 100%;
           height: 100%;
