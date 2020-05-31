@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <AppHeader></AppHeader>
     <SearchInput></SearchInput>
     <div class="menu">
       <ul class="clearfix">
@@ -41,6 +42,7 @@
 </template>
 
 <script>
+import AppHeader from '../components/AppHeader.vue'
 import SearchInput from '../components/SearchInput'
 import axios from 'axios'
 const img1 = require('../assets/images/ic_search.png')
@@ -57,6 +59,7 @@ const img11 = require('../assets/images/ic_mall.png')
 const img12 = require('../assets/images/ic_pp.png')
 export default {
   components: {
+    AppHeader,
     SearchInput
   },
   data () {
