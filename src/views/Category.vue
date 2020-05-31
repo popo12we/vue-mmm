@@ -3,15 +3,15 @@
     <AppHeader></AppHeader>
     <SearchInput></SearchInput>
     <div class="categorybox">
-      <van-collapse v-model="activeNames" @change="clickTitle">
+      <van-collapse v-model="activeNames">
           <van-collapse-item
             :title="item.title"
-            :name="item.id"
+            :name="item.titleId"
             v-for="item in titleList"
             :key="item._id"
           >
             <ul class="clearfix">
-              <li v-for="item in secondLevelData" :key="item._id">{{item.category}}</li>
+              <li v-for="item1 in secondLevelData[item.titleId]" :key="item1._id">{{item1.category}}</li>
             </ul>
           </van-collapse-item>
       </van-collapse>
@@ -43,24 +43,16 @@ export default {
       const res = await axios.get('/myapi/getcategorytitle')
       if (res.status === 200) {
         this.titleList = res.data.result
+        this.getSecData()
       }
     },
 
-    clickTitle (list) {
-      // console.log(list)
-      // console.log(this.activeNames)
-      if (list.length > this.activeNames.length) {
-        const lastValue = list[list.length - 1]
-        console.log(lastValue)
-        this.getSecondLevelData(lastValue)
-      }
-    },
-
-    async getSecondLevelData (value) {
-      const res = await axios.get(`/myapi/getcategory?titleid=${value}`)
-      if (res.status === 200) {
-        this.secondLevelData = res.data.result
-        console.log(this.secondLevelData)
+    async getSecData () {
+      for (let i = 0; i < this.titleList.length; i++) {
+        const res = await axios.get(`/myapi/getcategory?titleid=${i}`)
+        if (res.status === 200) {
+          this.secondLevelData[i] = res.data.result
+        }
       }
     }
   }
