@@ -49,7 +49,7 @@ export default {
 }
 </script>
 
-<style  lang="less" scoped>
+<style lang="less" scoped>
 .moneyproduct {
    margin:0 30px;
   .title {
