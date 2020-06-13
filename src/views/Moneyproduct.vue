@@ -1,6 +1,6 @@
 <template>
 <div>
-  <CompHeader headerTitle="国内折扣"></CompHeader>
+  <CompHeader headerTitle="国内折扣" headBgc="#ff841d"></CompHeader>
     <div class="moneyproduct">
 
     <h1 class="title">{{product.productName}}</h1>

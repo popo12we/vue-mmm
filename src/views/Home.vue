@@ -71,7 +71,7 @@ export default {
         { url: '/category', img: img1 },
         { url: '/category', img: img2 },
         { url: '/category', img: img3 },
-        { url: '/category', img: img4 },
+        { url: '/baicaijia', img: img4 },
         { url: '/category', img: img5 },
         { url: '/category', img: img6 },
         { url: '/category', img: img7 },

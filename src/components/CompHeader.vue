@@ -1,5 +1,5 @@
 <template>
-  <div class="CompHeader clearfix">
+  <div class="CompHeader clearfix" :style="{background:headBgc}">
     <div class="back" @click="goback"></div>
 
     <div class="appdown">
@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  props: ['headerTitle'],
+  props: ['headerTitle', 'headBgc'],
   methods: {
     goback () {
       this.$router.go(-1)
@@ -23,7 +23,7 @@ export default {
 <style  lang="less" scoped>
 .CompHeader {
   height: 98px;
-  background-color: #ff841d;
+
   .back {
     width: 98px;
     height: 98px;

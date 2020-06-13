@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Category from '../views/Category.vue'
 import Moneyproduct from '../views/Moneyproduct.vue'
 import Productlist from '../views/Productlist.vue'
+import Baicaijia from '../views/Baicaijia.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -26,6 +27,11 @@ const routes = [
     path: '/productlist/:id',
     name: 'Productlist',
     component: Productlist
+  },
+  {
+    path: '/baicaijia',
+    name: 'Baicaijia',
+    component: Baicaijia
   }
 ]
 
