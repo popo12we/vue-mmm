@@ -14,11 +14,11 @@
         </li>
         <li
           v-for="(item,index) in menuList.slice(8,12)"
-          @click="goToOther(linkList[index].url,item.name)"
+          @click="goToOther(linkList[index+8].url,item.name)"
           :key="item._id"
           v-show="showMore"
         >
-          <img :src="linkList[index].img" />
+          <img :src="linkList[index+8].img" />
           <div>{{item.name}}</div>
         </li>
       </ul>
@@ -76,7 +76,7 @@ export default {
         { url: '/category', img: img6 },
         { url: '/category', img: img7 },
         { url: '/category', img: img8 },
-        { url: '/category', img: img9 },
+        { url: '/gsproduct', img: img9 },
         { url: '/category', img: img10 },
         { url: '/category', img: img11 },
         { url: '/category', img: img12 }

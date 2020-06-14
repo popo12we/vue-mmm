@@ -5,6 +5,7 @@ import Category from '../views/Category.vue'
 import Moneyproduct from '../views/Moneyproduct.vue'
 import Productlist from '../views/Productlist.vue'
 import Baicaijia from '../views/Baicaijia.vue'
+import Gsproduct from '../views/Gsproduct.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -32,6 +33,11 @@ const routes = [
     path: '/baicaijia',
     name: 'Baicaijia',
     component: Baicaijia
+  },
+  {
+    path: '/gsproduct',
+    name: 'Gsproduct',
+    component: Gsproduct
   }
 ]
 
