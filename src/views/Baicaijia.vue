@@ -3,14 +3,14 @@
     <CompHeader headerTitle="白菜价-淘宝内部券" headBgc="#f4483e"></CompHeader>
     <van-tabs @change="changeTab">
       <van-tab v-for="(item) in titleList" :title="item.title" :key="item._id">
-        <div class="item">
-          <div class="left">
-            <img
-              src="https://gd2.alicdn.com/imgextra/i2/2631609186/TB2NI_UX9iJ.eBjSszfXXa4bVXa_!!2631609186.jpg_400x400.jpg"
-            />
+
+        <div class="item" v-for="item1 in baicaijiaproductList" :key="item1._id">
+
+          <div class="left" v-html="item1.productImg">
+
           </div>
           <div class="right">
-            <div class="title">厦门太祖挑嘴系列牛轧糖200g</div>
+            <div class="title" v-html="item1.productName"></div>
             <div class="price">
               <span class="newprice"><i>¥</i>券后7.9</span>
               <span class="oldprice"><i>¥</i>13.8</span>
@@ -32,12 +32,13 @@ export default {
   data () {
     return {
       titleList: [],
+      changeid: 0,
       baicaijiaproductList: []
     }
   },
   created () {
     this.getbaicaijiatitle()
-    this.getChangeTabData()
+    this.getChangeTabData(this.changeid)
   },
   methods: {
     async getbaicaijiatitle () {
@@ -47,18 +48,17 @@ export default {
       }
     },
 
-    async getChangeTabData (titleid = 0) {
+    async getChangeTabData () {
       const res = await axios.get(
-        `/myapi/getbaicaijiaproduct?titleid=${titleid}`
+        `/myapi/getbaicaijiaproduct?titleid=${this.changeid}`
       )
       if (res.status === 200) {
         this.baicaijiaproductList = res.data.result
-        this.titleList[titleid].objData = this.baicaijiaproductList
-        console.log(this.titleList)
       }
     },
     changeTab (titleid) {
-      this.getChangeTabData(titleid)
+      this.changeid = titleid
+      this.getChangeTabData(this.changeid)
     }
   }
 }
