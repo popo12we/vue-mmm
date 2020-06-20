@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span onclick="routerChange('/')">首页</span>
+    <span onclick="routerChange('/about')">关于</span>
+    <div id="view"></div>
+
+    <script>
+        // function routerChange(pathname){
+        //     console.log(location)
+        //     location.hash=pathname
+        // }
+
+         function routerChange(pathname){
+            // console.log(location)
+            // location.hash=pathname
+            history.pushState(null,null,pathname)
+        }
+    </script>
+</body>
+</html>
